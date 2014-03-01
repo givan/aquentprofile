@@ -1,0 +1,14 @@
+
+<!-- Option 1 Add media query support for IE8 and under. Must place media queries in external stylesheet -->
+<script src=".js/respond.min.js"></script>
+
+
+<!-- Option 2 Add media query support for IE8 and under. Must place media queries in external stylesheet -->
+
+<!--[if lt IE 9]><html class="ie"><![endif]-->
+<!--[if gte IE 9]><!--><html><!--<![endif]-->
+
+.ie body{
+	width:640px;
+	margin:0 auto;
+}

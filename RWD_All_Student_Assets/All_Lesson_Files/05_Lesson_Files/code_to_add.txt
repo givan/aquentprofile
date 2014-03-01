@@ -1,0 +1,169 @@
+
+/*
+---------------------------			
+To get our typographic scale we do three things: 
+Step 1.) Using our paragraph we find the sweet spot for for body text font-size and line-height by eye.
+Step 2.) Multiply the font-size by the line-height 1.063 x 1.25 = 1.32875
+Step 3.) Try to reduce this number to a whole number that is easier to divide later on! So in this case: 1.3
+---------------------------
+*/
+
+p {
+    font-size: 1.063em; /* 17px / 16 = 1.063em */
+    line-height: 1.25; /* 20px / 16 = 1.25em */
+}
+
+/*
+---------------------------			
+Using the scale: Divide it by the font-size (Crazy decimals rounded down!)
+---------------------------
+*/
+
+p {
+    font-size: 1.063em; /* 17px / 16 = 1.063em */
+    line-height: 1.223; /* 1.3 / 1.063 = 1.223em */
+}
+
+/*
+---------------------------			
+Scale our H3s using 1.3 as a baseline
+---------------------------
+ Our *target* is this: We want the overall height of our h3 elements to be one and one quarter times larger than the height of our paragraph.
+
+A line of body text uses a scale of 1.3 so let's figure out what 1/4 of that is: 
+(1.3 divided by 4 =.)
+
+We add 1.3 + .325 and arrive at a scale of 1.625
+*/
+ 
+h3 {
+    font-size: 1.382em; /* Font-size of our paragraph x scale (1.063em x 1.3) */ 
+    line-height: 1.176; /* 1.625 / 1.382 = 1.17583212735166 */
+}
+
+/*
+---------------------------			
+Adding padding based on our scale
+---------------------------
+
+Separate Portfolio/Resume sections using 1.3, equal to one line of body text, but we are going to break 1.3 into fourths, 1.3 / 4 = .325 and we'll use 2/4 to create the top padding:
+/*
+     
+#content article {
+    padding-top: .65em;
+    padding-bottom: 1.3em;
+}
+
+/*
+---------------------------			
+Adding margins
+---------------------------
+ Now let's add 1/2 our line-height to the body text's top/bottom margin...
+1.223 / 2 = .6115, rounded to .612em
+*/
+
+p {
+    font-size: 1.063em;
+    line-height: 1.223;
+    margin: .612em 0;
+}
+
+
+/*
+---------------------------			
+Copy & paste all these styles
+---------------------------
+*/
+h1, h2 {
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .65);
+    }	
+
+h4 {
+    font-size: 1em;
+    line-height: 1.56;
+    text-transform: uppercase;
+}
+
+#portfolio h4 {
+    line-height: 1.82;
+}
+
+h5,h6 {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: .85em;
+	line-height: 1.53;
+	font-weight: 500;
+					}
+    
+h6 {
+	color: #aaa;
+	font-weight: 200;
+					 }	
+.box ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+#nav h3 {
+    text-transform: capitalize;
+}
+
+/*	
+---------------------------			
+Boxes for Portfolio images and "Currently", "Previously and "Skills"
+---------------------------
+*/
+    	
+.box h4 {
+    color: #999;
+    border-top: 4px double #eee;
+    border-bottom: 1px solid #eee;
+    margin-bottom: .975em; /* 3/4 of 1.3 */
+    text-align: center;
+}
+
+figure,
+.box {
+    background: #fff;
+    -moz-box-shadow: 0 0 .325em .13em rgba( 0, 0, 0, .1 );
+    -webkit-box-shadow: 0 0 .325em .13em rgba( 0, 0, 0, .1 );
+    box-shadow: 0 0 .325em .13em rgba( 0, 0, 0, .1 );
+    padding: .975em; /* 3/4 of 1.3 */
+}
+
+section footer {
+    clear: both;
+    }
+
+/*
+---------------------------			
+ Media Queries Update
+---------------------------
+
+Convert 720px to em, 45em
+
+We want to slightly scale everything calculated in ems after 45em:
+
+Change the scale from 1.3 up to 1.4 
+
+1.4 / 1.3 = 1.07692307692308
+1.07692307692308 x 100 = 107.692307692308%
+
+*/
+   
+/* ******************************************
+	Media Queries for screen wider than 720px
+****************************************** */
+@media screen and (min-width: 45em) {
+
+    body {
+        font-size: 107.692307692308%;
+        }
+
+	
+}
+       
+
+
+  

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Squishy Grid</title>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta name="author" content="Justin Gagne" />
+
+<style>
+
+* {
+    margin: 0;
+    }
+    
+body {
+    max-width: 60em;
+    margin: auto;
+    }
+    
+div {
+    float: left;
+    padding-bottom: 100%;
+    }
+    
+.gutter {
+    width: 1.1%; /* 10px / .625em, roughly simulating .65em (1/2 of 1.3 scale) */
+    background: #ff6;
+    }
+    
+.col {
+    width: 31.133%;
+    }
+
+</style>
+
+</head>
+<body>
+
+<div class="gutter"></div>
+<div class="col"></div>
+<div class="gutter"></div>
+<div class="gutter"></div>
+<div class="col"></div>
+<div class="gutter"></div>
+<div class="gutter"></div>
+<div class="col"></div>
+<div class="gutter"></div>
+
+</body>
+</html>

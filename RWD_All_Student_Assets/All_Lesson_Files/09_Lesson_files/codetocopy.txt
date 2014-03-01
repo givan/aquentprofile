@@ -1,0 +1,244 @@
+
+---------------------------			
+Update HTML with the <a> element 
+---------------------------
+
+        <nav>
+            <ul>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="./">LinkedIn Profile</a></li> <!-- No destination yet -->
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+		
+---------------------------			
+Style nav section for single column smallscreen view 
+---------------------------
+
+/* Navigation */
+
+/*   
+- Create faux section height using padding.
+*/
+
+#nav {
+    padding: .65em 0;
+}
+
+/*
+- Float heading and capitalize content.
+*/
+
+#nav h3 {
+    float: left;
+    text-transform: capitalize; 
+}
+
+
+/* 
+- Remove <ul> list-style and default padding.
+- Add a border-top to separate each <li>.
+- Add a border-bottom to <ul> to wrap-up border styling. 
+- Add margin to separate, push off <ul> from heading/navicon and below #masthead section.
+*/
+
+#nav ul {
+    list-style: none;
+    padding: 0;
+    border-bottom: 1px solid #eee;
+    margin: .65em 0 .39em;
+}
+
+#nav li {
+   border-top: 1px solid #eee;
+}
+
+/* 
+- Style inline <a> to become a block element.
+- Update font-size to reflect foundation font scale defined by body text (<p>).
+- Override default link color
+- Remove default <a> text-decoration of underline.
+- Add padding, keeping horizontal and vertical rhythm.
+ */
+
+#nav a {
+   display: block;
+   font-size: 1.063em;
+   color: #333;
+   text-decoration: none;
+   padding: .975em 1.3em; 
+}
+
+/*
+13. Style :hover for non-touch enabled browsers/devices.
+*/
+
+#nav a:hover {
+   background: #f8f8f8;
+}
+
+/* 
+Hide <nav> off-screen
+http://37signals.com/svn/posts/3126-another-9999px ]
+*/
+
+#nav nav {
+    height: 0;
+    overflow: hidden;
+}
+
+---------------------------			
+C. Update contact form with id for hyperlink
+---------------------------
+
+HTML:
+
+<form id="contact">
+
+---------------------------			
+Create a drop-down menu and navicon using the Advanced Checkbox Hack markup.
+---------------------------
+
+Introductory reading:
+http://css-tricks.com/the-checkbox-hack/
+
+A. HTML: Checkbox Markup (Place above nav element within the "nav" id)
+
+
+        <!-- Checkbox Hack markup -->
+        <input type="checkbox" id="toggle" />
+        <label for="toggle" onclick>Menu</label>
+        <!-- /Checkbox Hack markup -->
+
+B. CSS: Advanced Checkbox Hack
+
+Further reading:
+http://timpietrusky.com/advanced-checkbox-hack
+
+/* ******************************************
+    Advanced Checkbox Hack
+****************************************** */
+
+body { 
+    -webkit-animation: bugfix infinite 1s; 
+}
+
+@-webkit-keyframes bugfix {
+    from {padding: 0;} 
+    to {padding: 0;} 
+}
+
+/* 
+1. Hide <nav> off-screen / -9999px/-999em technique works best.
+*/
+
+#nav input[type=checkbox] {
+    position: absolute;
+    top: -999em;
+    left: -999em;
+}
+
+/* 
+2. Restore <label> element (Removed in min-width: 45em media query).
+3. Present <label> as navicon using a background-image.
+4. Hide <label> content - "Menu" - off-screen using negative text-indent.
+5. Style <label> to behave like a link using cursor and user-select properties.
+*/
+
+#nav label { 
+    display: block;
+    background: url("img/icon-menu.png") no-repeat right center;
+    text-indent: -999em;
+    cursor: pointer;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;
+}
+
+/* 
+6. Show <nav> on-screen / drop-down menu 
+*/
+
+#nav input[type=checkbox]:checked ~ nav {
+    height: auto;
+    overflow: hidden;  
+}
+
+---------------------------			
+STEP 3
+---------------------------
+
+Create horizontal menu for screens with a min-width of 45em.
+
+CSS:
+
+/* ******************************************
+    Media Queries
+****************************************** */
+
+/* @media screen and (min-width: 720px) */
+@media screen and (min-width: 45em) {
+
+    /*
+    1. Remove padding from one-column layout style.
+    */
+    
+    #nav {
+        padding: 0;
+    }
+    
+    /*
+    2. Adjust headline baseline using margin-top to align with horizontal menu and margin-right to create a gap/division from the two types of content.
+    */
+
+    #nav h3 {
+         margin: .39em 1.3em 0 0;
+    }
+    
+    /*
+    3. Remove <label> element.
+    */
+
+    #nav label {
+        display: none;
+    }
+    
+    /* 
+    4. Show <nav> on-screen.
+    */
+
+    #nav nav {
+        height: auto;
+        overflow: visible;
+    }
+    
+    /* 
+    5. Remove border and margin from one-column layout style.
+    */
+    
+    #nav ul {
+        border: 0;
+        margin: 0;
+        }
+        
+    /* 
+    6. Display <li> as inline for horizontal menu layout.
+    7. Remove border.
+    */
+
+    #nav li {
+        display: inline;
+        border: 0;
+    }
+    
+    /* 
+    8. Display <a> from block to inline-block to remain inline for horizontal menu layout.
+    */
+    
+    #nav a {
+        display: inline-block;
+        }
+
+}    

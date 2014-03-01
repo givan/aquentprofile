@@ -1,0 +1,71 @@
+---------------------------			
+USED TO DEMONSTRATE BACKGROUND-SIZE
+---------------------------
+
+background: #352a38 url("../img/bg-photo-wrong.jpg") no-repeat top center;
+
+---------------------------			
+MEDIA QUERY FOR BACKGROUND IMAGE WHEN GREATER THAN 45 EM (720PX)
+---------------------------
+	@media screen and (min-width: 45em) {
+			#container-header {
+			    background: #352a38 url("img/bg-photo-l.jpg") no-repeat top center;
+				-webkit-background-size: cover;
+			    -moz-background-size: cover;
+			    background-size: cover;
+				padding: 10% 0;
+			}
+		}
+	
+
+---------------------------			
+MEDIA QUERY FOR BACKGROUND IMAGE WHEN LESS THAN 45 EM (720PX)
+---------------------------
+	@media screen and (max-width: 45em) {
+		#container-header {
+		    background: #352a38 url("img/bg-photo-s.jpg") no-repeat top center;
+			-webkit-background-size: cover;
+		    -moz-background-size: cover;
+		    background-size: cover;
+			padding: 10% 0;
+		}
+	}
+	
+
+---------------------------			
+ADD INLINE IMAGE OF MAYA AND STYLE
+---------------------------
+/* Headshot */
+
+#maya {
+    width: 25%;
+    height: 0;
+    padding-bottom: 25%;
+    }
+    
+#maya img {
+    width: 100%;
+    }
+
+
+---------------------------			
+PICTUREFILL
+---------------------------
+		<!-- Using picturefill to load conditional images and matchmedia to provide support for IE8 and below + older browsers -->
+		<script src="js/picturefill.js"></script>
+		<script src="js/matchmedia.js"></script>
+
+
+<figure id="maya"> 
+    <div data-picture data-alt="Maya Chopra">
+        <div data-src="img/headshot-s.png"></div>
+        <div data-src="img/headshot-m.png" data-media="(min-width: 45em)"></div>
+        <div data-src="img/headshot-l.png" data-media="(min-width: 60em)"></div>
+        <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+        <noscript>
+            <img src="./img/headshot-s.png" alt="Maya Chopra">
+        </noscript>
+    </div>
+</figure>
+
+	

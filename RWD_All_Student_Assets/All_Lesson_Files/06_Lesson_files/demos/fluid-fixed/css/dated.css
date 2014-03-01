@@ -1,0 +1,12 @@
+body {
+    position: relative;
+    width: 60em;
+    }
+    
+.row {
+    zoom: 1;
+    }
+
+.row .col {
+    behavior: url("http://wedelivery.com/lab/responsive-grid/js/boxsizing.htc");
+    }

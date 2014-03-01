@@ -1,0 +1,29 @@
+	@media print and (max-width: 8.5in){
+
+		#masthead {
+			color:black;
+		}
+		
+		#container-header {
+			height: auto;
+		}
+		
+		img {
+			width:2in;
+		}
+		
+		#portfolio	{
+			float:left;
+			width:45%;
+		}
+		
+		#resume	{
+			float:right;
+			width:45%;
+		}
+		
+		#container-footer	{
+			clear:both;
+		}
+		
+	}

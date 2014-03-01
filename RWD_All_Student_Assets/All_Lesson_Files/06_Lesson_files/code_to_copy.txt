@@ -1,0 +1,161 @@
+---------------------------			
+CSS wrapper class with box-sizing
+---------------------------
+
+/* Fluid Columns, Fixed Gutters */
+
+.wrapper {
+    padding: 0 .65em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+---------------------------			
+Media Queries
+---------------------------
+
+/* ******************************************
+	Media Queries for screen wider than 45em (720px)
+****************************************** */
+
+	@media screen and (min-width: 45em) {
+
+	    body {
+	        font-size: 107.692307692308%;
+	        }
+
+		#portfolio article,
+		#resume article {
+			float: left;
+			width: 33.333%;
+		}
+	
+	}
+	
+
+
+---------------------------			
+Place in external stylesheet
+---------------------------
+
+/* Remember box-sizing isn't supported in legacy browsers like IE7 and below.
+Let's address this issue, using a polyfill.
+
+Box-sizing Polyfill for IE7 and IE6
+https://github.com/Schepp/box-sizing-polyfill 
+
+Note: When using this polyfill, use an absolute path instead of a relative path to avoid an issue with the polyfill not loading.
+*/
+
+/* ******************************************
+    IE 7 and below, legacy browser style fixes
+****************************************** */
+
+.ie .wrapper {
+    *behavior: url("http://absolute-path.com/js/boxsizing.htc");
+}
+
+/* Clearfix */
+
+.group {
+    *zoom: 1;
+    }
+
+
+---------------------------			
+Adjusting line-length to grid
+---------------------------
+
+/* Address line-length of our Masthead's h1 and h2.*/
+
+
+#masthead {
+    width: 80%;
+    }
+    
+  
+/* Addressing line-length of our Masthead's h1 and h2 in the wider-screen view*/
+/* ******************************************
+	Media Queries for screen wider than 45em (720px)
+****************************************** */
+
+	@media screen and (min-width: 45em) {
+
+	    body {
+	        font-size: 107.692307692308%;
+	        }
+	        
+	    #masthead {
+			max-width: 40em;
+		}
+
+		#portfolio article,
+		#resume article {
+			float: left;
+			width: 33.333%;
+		}
+	
+	}
+
+
+/* Finetuning the vertical rhythm of our masthead 
+(Details: padding-top = 1.3 x 2 = 2.6, which is a little too much.
+Shave off a 1/4 of 1.3 (.325) to get 2.275em.)
+*/
+
+
+
+
+#masthead {
+    width: 80%;
+    padding-top: 2.275em;
+    }
+    
+
+---------------------------			
+Fine-tuning our 3 column layout on the larger width screens
+---------------------------
+/*  We are going to give the #nav, #masthead, #content and #colophon ids the same left & right margin of 3.3%. This will give us a centered page in both the single column layout /*
+
+#nav,
+#masthead,
+#content,
+#colophon {
+	margin: 0 3.3%;
+}
+
+/*  The 3.3% margins do not work with our three column layout, the image thumbnails max out and do not fill the width of the columns. By increasing the #nav, #masthead, #content and #colophon margins to 5.5% keeps image widths below their maximum width of 400px*/
+
+/* ******************************************
+	Media Queries for screen wider than 45em (720px)
+****************************************** */
+
+	@media screen and (min-width: 45em) {
+
+	    body {
+	        font-size: 107.692307692308%;
+	        }
+	        
+	    #masthead {
+			max-width: 40em;
+		}
+
+		#portfolio article,
+		#resume article {
+			float: left;
+			width: 33.333%;
+		}
+
+        #nav,
+        #masthead,
+        #content,
+        #colophon {
+            margin: 0 5.5%;
+        }
+	
+	}
+
+
+
+

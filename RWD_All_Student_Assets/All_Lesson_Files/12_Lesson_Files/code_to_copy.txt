@@ -1,0 +1,41 @@
+SCSS: Copy Everything Below This Line:
+__________________________________________
+
+$scale: 1.3em;
+$sans-serif-fallback: Helvetica, Arial, sans-serif;
+
+h1 {
+  font: #{$scale}/1 $sans-serif-fallback;
+  } 
+  
+article {
+  padding: $scale/4 0;
+  }
+__________________________________________
+
+Then paste and render:
+http://sass-lang.com/try.html
+
+
+
+SCSS Mixin(s): Copy Everything Below This Line:
+__________________________________________
+
+
+A. SCSS:
+
+@mixin vendor-prefix($name, $argument) {
+  -o-#{$name}: $argument;
+  -moz-#{$name}: $argument;
+  -ms-#{$name}: $argument;
+  -webkit-#{$name}: $argument;
+  #{$name}: $argument;
+  }
+
+div {
+  width: 8em;
+  height: 8em;
+  background: #000;
+  @include vendor-prefix(border-radius, 1%);
+  @include vendor-prefix(box-sizing, border-box)
+  }
