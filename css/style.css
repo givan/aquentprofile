@@ -156,4 +156,44 @@ body {
     font-family: 'Roboto Condensed Light', 'Helvetica Neue', Helvetica, sans-serif;
 }
 
+/**********************
+Media queries (print)
+**********************/
+@media print and (max-width: 8.5in) {
+    #masthead {
+        color: black
+    }
 
+    #container-header {
+        height: auto;
+    }
+
+    img {
+        width: 2in;
+    }
+
+    #portfolio {
+        float: left;
+        width: 45%;
+    }
+
+    #resume {
+        float: right;
+        width: 45%;
+    }
+
+    #container-footer {
+        clear: both;
+    }
+}
+
+/**********************
+Media queries (pc; screen wider than 720px)
+**********************/
+@media screen and (min-width: 720px) {
+    #portfolio article,
+    #resume article {
+        float: left;
+        width: 33%;
+    }
+}

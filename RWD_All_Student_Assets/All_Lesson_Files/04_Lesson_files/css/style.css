@@ -160,11 +160,11 @@ body {
 /* ******************************************
 	Media Queries for screen wider than 720px
 ****************************************** */
-@media screen and (width: 720px){
-	#portfolio article,
-	#resume article {
-		float:left;
-		width:33%;
-	}
+@media screen and (min-width: 720px) {
+    #portfolio article,
+    #resume article {
+        float: left;
+        width: 33%;
+    }
 }
 	
