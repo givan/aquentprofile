@@ -20,6 +20,15 @@
     <![endif]-->
 
     <style type="text/css" media="all">
+
+        html {
+            font-size: 100%;
+            line-height: 1;
+            -moz-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
         img {
             max-width: 100%;
         }
@@ -67,6 +76,109 @@
 
         .box {
             padding: 14px;
+        }
+
+        p {
+            font-size: 1.063em; /* 17px / 16px = 1.063em */
+            line-height: 1.223; /* 1.3 / 1.063 = 1.223em */
+
+            /*
+            these were the initial values:
+
+            font-size: 1.063em; / * 17px / 16px = 1.063em * /
+            line-height: 1.25; / * 20px / 16px = 1.25em * /
+
+            typographic scale by multiplying the font-size and line-height in ems:
+
+              1.063 * 1.25 = 1.32875 -> rounded to 1.3 -> this is the typographic scale for the page
+
+              we re going to calculate any measurement on the page with that golden value
+
+                Scale:      1.3
+                3/4 Scale: .975
+                1/2 Scale: .65
+                1/4 scale: .325
+                */
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 100;
+        }
+
+        h1 {
+            font-size: 3.189em; /* usually 3 times the p = 3 * 1.063  */
+            line-height: 1.223; /* the same as P */
+        }
+
+        h2 {
+            font-size: 2.126em; /* usually 2 times the P = 2 * 1.063 */
+            line-height: 1.223; /* the same as P */
+        }
+
+        h3 {
+            font-size: 1.382em; /* 1.3 (the scale) * 1.063 (<P>'s font size)  = 1.382 (rounded to 3 decimal places) */
+            line-height: 1.176; /* 1.625 (the scale) / 1.382 (<H3>'s font scale) = 1.176 */
+        }
+
+        h1, h2 {
+            text-shadow: 0 2px 2px rgba(0, 0, 0, .65);
+        }
+
+        h4 {
+            font-size: 1em;
+            line-height: 1.56;
+            text-transform: uppercase;
+        }
+
+        #portfolio h4 {
+            line-height: 1.82;
+        }
+
+        h5,h6 {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: .85em;
+            line-height: 1.53;
+            font-weight: 500;
+        }
+
+        h6 {
+            color: #aaa;
+            font-weight: 200;
+        }
+        .box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+
+        #nav h3 {
+            text-transform: capitalize;
+        }
+
+        #content article {
+            padding-top: 0.65em; /* 1/2 scale */
+            padding-bottom: 1.3em; /* our scale factor */
+        }
+
+        .box h4 {
+            color: #999;
+            border-top: 4px double #eee;
+            border-bottom: 1px solid #eee;
+            margin-bottom: .975em; /* 3/4 of 1.3 */
+            text-align: center;
+        }
+
+        figure,
+        .box {
+            background: #fff;
+            -moz-box-shadow: 0 0 .325em .13em rgba( 0, 0, 0, .1 );
+            -webkit-box-shadow: 0 0 .325em .13em rgba( 0, 0, 0, .1 );
+            box-shadow: 0 0 .325em .13em rgba( 0, 0, 0, .1 );
+            padding: .975em; /* 3/4 of 1.3 */
+        }
+
+        section footer {
+            clear: both;
         }
 
         /**********************
