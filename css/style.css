@@ -140,9 +140,6 @@ table {
 /* ******************************************
 	Web Fonts
 ****************************************** */
-/* ******************************************
-	Web Fonts
-****************************************** */
 
 @font-face {
     font-family: "Roboto Condensed Light";
@@ -209,13 +206,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 2.764em; /* 2.6 * 1.063 3 times the p = 2.7638  */
+    font-size: 2.764em; /* 1.95 * 1.063  = 2.7638  */
     line-height: 0.941; /* 2.6 / 2.764 = .940665702 */
 }
 
 h2 {
-    font-size: 2.126em; /* usually 2 times the P = 2 * 1.063 */
-    line-height: 1.223; /* the same as P */
+    font-size: 2.073em; /* usually 2 times the P = 1.95 * 1.063 = 2.07285 */
+    line-height: 1.223; /* 1.95 / 2.073 */
 }
 
 h3 {
