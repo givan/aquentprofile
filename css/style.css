@@ -261,22 +261,22 @@ h6 {
     width: 100%;
     height: 350px;
     background: #352a38;
-    padding-top: 14px;
+    padding-top: .875em; /*  14 / 16px */
 }
 
 #container-content {
-    padding: 24px 0;
+    padding: 1.5em 0; /* 24 /16px */
 }
 
 #container-footer {
-    padding: 32px 0;
+    padding: 2em 0; /* 32 /16px = 2em */
     background: #352a38;
     color: #eee;
     font-weight: 100;
 }
 
 .box {
-    padding: 14px;
+    padding: 0.875em; /* 14 / 16px */
 }
 
 #portfolio h4 {
@@ -369,6 +369,10 @@ Media queries (pc; screen wider than 720px)
     #content,
     #colophon {
         margin: 0 5.5%;
+    }
+
+    #container-header {
+        height: 250px;
     }
 }
 
