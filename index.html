@@ -17,6 +17,10 @@
     <!-- Option 1 Add media query support for IE8 and under. Must place media queries in external stylesheet -->
     <script src="./js/respond.min.js"></script>
 
+    <!-- Using picturefill to load conditional images and matchmedia to provide support for IE8 and below + older browsers -->
+    <script src="js/picturefill.js"></script>
+    <script src="js/matchmedia.js"></script>
+
     <!--[if lt IE 9]>
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -132,6 +136,16 @@
             }
         }
 
+        #george {
+            width: 25%;
+            height: 0;
+            padding-bottom: 25%;
+        }
+
+        #george img {
+            width: 100%;
+        }
+
     </style>
 </head>
 
@@ -156,10 +170,20 @@
 </div>
 <div id="container-header">
     <header id="masthead" class="wrapper">
+        <figure id="george">
+            <div data-picture data-alt="George Ivanov">
+                <div data-src="img/headshot-s.png"></div>
+                <div data-src="img/headshot-m.png" data-media="(min-width: 45em)"></div>
+                <div data-src="img/headshot-l.png" data-media="(min-width: 60em)"></div>
+                <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+                <noscript>
+                    <img src="./img/headshot-s.png" alt="George Ivanov">
+                </noscript>
+            </div>
+        </figure>
         <h1>Hi, I'm George</h1>
 
-        <h2>A Seattle-based full stack developer and entrepreneur, passionate about mobile user experiences and
-            scalable backends</h2>
+        <h2>A Seattle-based full stack developer passionate about mobile user experiences and scalable backends</h2>
     </header>
 </div>
 <div id="container-content">
