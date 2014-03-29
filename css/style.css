@@ -414,6 +414,31 @@ textarea {
     background: #555;
 }
 
+figure {
+    position: relative;
+}
+
+figure img,
+figure object,
+figure embed,
+figure video {
+    display: block;
+    max-width: 100%;
+}
+
+img {
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+}
+
+/* Creates hover effect on Portfolio images */
+#portfolio figure:hover,
+.box:hover {
+    -moz-box-shadow: 0 0 .65em .325em rgba(0, 0, 0, .1);
+    -webkit-box-shadow: 0 0 .65em .325em rgba(0, 0, 0, .1);
+    box-shadow: 0 0 .65em .325em rgba(0, 0, 0, .1);
+}
+
 section footer {
     clear: both;
 }

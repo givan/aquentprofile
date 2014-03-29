@@ -23,31 +23,114 @@
 
     <style type="text/css" media="all">
 
-        figure {
-            position: relative;
+        #nav {
+            padding: .65em 0;
         }
 
-        figure img,
-        figure object,
-        figure embed,
-        figure video {
+        #nav h3 {
+            float: left;
+            text-transform: capitalize;
+        }
+
+        #nav ul {
+            list-style: none;
+            padding: 0;
+            border-bottom: 1px solid #eee;
+            margin: .65em 0 .39em;
+        }
+
+        #nav li {
+            border-top: 1px solid #eee;
+        }
+
+        #nav a {
             display: block;
-            max-width: 100%;
+            font-size: 1.063em;
+            color: #333;
+            text-decoration: none;
+            padding: .975em 1.3em;
         }
 
-        img {
-            border: 0;
-            -ms-interpolation-mode: bicubic;
+        #nav a:hover {
+            background: #f8f8f8;
         }
 
-        /* Creates hover effect on Portfolio images */
-        #portfolio figure:hover,
-        .box:hover {
-            -moz-box-shadow: 0 0 .65em .325em rgba(0, 0, 0, .1);
-            -webkit-box-shadow: 0 0 .65em .325em rgba(0, 0, 0, .1);
-            box-shadow: 0 0 .65em .325em rgba(0, 0, 0, .1);
+        #nav nav {
+            height: 0;
+            overflow: hidden;
         }
 
+        body {
+            -webkit-animation: bugfix infinite 1s;
+        }
+
+        @-webkit-keyframes bugfix {
+            from {
+                padding: 0;
+            }
+            to {
+                padding: 0;
+            }
+        }
+
+        #nav input[type=checkbox] {
+            position: absolute;
+            top: -999em;
+            left: -999em;
+        }
+
+        #nav label {
+            display: block;
+            background: url("img/icon-menu.png") no-repeat right center;
+            text-indent: -999em;
+            cursor: pointer;
+            -webkit-user-select: none; /* Chrome all / Safari all */
+            -moz-user-select: none; /* Firefox all */
+            -ms-user-select: none; /* IE 10+ */
+            user-select: none;
+        }
+
+        #nav input[type=checkbox]:checked ~ nav {
+            height: auto;
+            overflow: hidden;
+        }
+
+        @media screen and (min-width: 45em) {
+
+            /*
+            1. Remove padding from one-column layout style.
+            */
+            #nav {
+                padding: 0;
+            }
+
+            #nav h3 {
+                margin: .39em 1.3em 0 0;
+            }
+
+            #nav label {
+                display: none;
+            }
+
+            #nav nav {
+                height: auto;
+                overflow: visible;
+            }
+
+            #nav ul {
+                border: 0;
+                margin: 0;
+            }
+
+            #nav li {
+                display: inline;
+                border: 0;
+            }
+
+            #nav a {
+                display: inline-block;
+            }
+        }
 
     </style>
 </head>
@@ -56,13 +139,18 @@
 <div id="container-nav">
     <section id="nav" class="wrapper">
     <h3>George Ivanov</h3>
+        <!-- Checkbox Hack markup -->
+        <input type="checkbox" id="toggle"/>
+        <label for="toggle" onclick>Menu</label>
+        <!-- /Checkbox Hack markup -->
         <nav>
-            <!--<ul>-->
-            <!--<li>Portfolio</li>-->
-            <!--<li>Resume</li>-->
-            <!--<li>LinkedIn Profile</li>-->
-            <!--<li>Contact</li>-->
-            <!--</ul>-->
+            <ul>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="./">LinkedIn Profile</a></li>
+                <!-- No destination yet -->
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
     </section>
 </div>
@@ -157,8 +245,8 @@
     </article>
 </div>
 <div id="container-footer">
-    <form>
-        <fieldset class="wrapper">
+    <form id="contact">
+    <fieldset class="wrapper">
             <legend>Contact</legend>
             <ul class="group">
                 <li class="name">
