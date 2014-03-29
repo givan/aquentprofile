@@ -27,124 +27,7 @@
 
     <style type="text/css" media="all">
 
-        #nav {
-            padding: .65em 0;
-        }
 
-        #nav h3 {
-            float: left;
-            text-transform: capitalize;
-        }
-
-        #nav ul {
-            list-style: none;
-            padding: 0;
-            border-bottom: 1px solid #eee;
-            margin: .65em 0 .39em;
-        }
-
-        #nav li {
-            border-top: 1px solid #eee;
-        }
-
-        #nav a {
-            display: block;
-            font-size: 1.063em;
-            color: #333;
-            text-decoration: none;
-            padding: .975em 1.3em;
-        }
-
-        #nav a:hover {
-            background: #f8f8f8;
-        }
-
-        #nav nav {
-            height: 0;
-            overflow: hidden;
-        }
-
-        body {
-            -webkit-animation: bugfix infinite 1s;
-        }
-
-        @-webkit-keyframes bugfix {
-            from {
-                padding: 0;
-            }
-            to {
-                padding: 0;
-            }
-        }
-
-        #nav input[type=checkbox] {
-            position: absolute;
-            top: -999em;
-            left: -999em;
-        }
-
-        #nav label {
-            display: block;
-            background: url("img/icon-menu.png") no-repeat right center;
-            text-indent: -999em;
-            cursor: pointer;
-            -webkit-user-select: none; /* Chrome all / Safari all */
-            -moz-user-select: none; /* Firefox all */
-            -ms-user-select: none; /* IE 10+ */
-            user-select: none;
-        }
-
-        #nav input[type=checkbox]:checked ~ nav {
-            height: auto;
-            overflow: hidden;
-        }
-
-        @media screen and (min-width: 45em) {
-
-            /*
-            1. Remove padding from one-column layout style.
-            */
-            #nav {
-                padding: 0;
-            }
-
-            #nav h3 {
-                margin: .39em 1.3em 0 0;
-            }
-
-            #nav label {
-                display: none;
-            }
-
-            #nav nav {
-                height: auto;
-                overflow: visible;
-            }
-
-            #nav ul {
-                border: 0;
-                margin: 0;
-            }
-
-            #nav li {
-                display: inline;
-                border: 0;
-            }
-
-            #nav a {
-                display: inline-block;
-            }
-        }
-
-        #george {
-            width: 25%;
-            height: 0;
-            padding-bottom: 25%;
-        }
-
-        #george img {
-            width: 100%;
-        }
 
     </style>
 </head>
@@ -172,9 +55,9 @@
     <header id="masthead" class="wrapper">
         <figure id="george">
             <div data-picture data-alt="George Ivanov">
-                <div data-src="img/headshot-s.png"></div>
-                <div data-src="img/headshot-m.png" data-media="(min-width: 45em)"></div>
-                <div data-src="img/headshot-l.png" data-media="(min-width: 60em)"></div>
+                <div data-src="./img/headshot-s.png"></div>
+                <div data-src="./img/headshot-m.png" data-media="(min-width: 45em)"></div>
+                <div data-src="./img/headshot-l.png" data-media="(min-width: 60em)"></div>
                 <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
                 <noscript>
                     <img src="./img/headshot-s.png" alt="George Ivanov">
