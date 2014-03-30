@@ -1,4 +1,8 @@
 <!DOCTYPE HTML>
+<!--[if lt IE 9]>
+<html class="ie"><![endif]-->
+<!--[if !IE]>
+<html><![endif]-->
 <html>
 <head>
     <meta charset="UTF-8">
@@ -21,6 +25,25 @@
 
     <!--[if lt IE 9]>
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!----------------------------
+     Checkbox Hack Support for IE8
+    --------------------------->
+    <!--[if lt IE 9]>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+    <![endif]-->
+
+    <!--[if IE 8]>
+    <script src="./js/checkbox.js"></script>
+    <![endif]-->
+
+    <!---------------------------
+    C. Attribute Selector Support for IE6
+    --------------------------->
+
+    <!--[if IE 6]>
+    <script src="./js/selectivizr-min.js"></script>
     <![endif]-->
 
     <style type="text/css" media="all">

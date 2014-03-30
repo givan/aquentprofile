@@ -650,6 +650,15 @@ textarea {
         margin-left: 50%;
     }
 
+    /* Form Fixes, IE7 and below */
+    .ie .message textarea {
+        *width: 49.9%;
+    }
+
+    .ie .send {
+        *margin-left: 46.7%;
+    }
+
 }
 
 /* ******************************************
@@ -698,7 +707,54 @@ textarea {
 .group {
     *zoom: 1;
 }
-		
 
+/* ******************************************
+    IE 8 and below, legacy browser style fixes
+****************************************** */
+
+/* Figures/Images */
+
+.ie #portfolio figure {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* "*" hack applies only to IE7 and below */
+
+.ie #portfolio figure {
+    *width: auto;
+}
+
+/* Navigation */
+
+/* IE8 .checked class for checkbox.js */
+
+#nav input[type=checkbox].checked ~ nav {
+    height: auto;
+    overflow: visible;
+}
+
+/* Always show nav, IE7 and below */
+
+.ie #nav nav {
+    *height: auto;
+    *overflow: visible;
+}
+
+/* Hide navicon, IE7 and below */
+
+.ie #nav label {
+    *background: none;
+}
+
+/* box-sizing polyfill, IE7 and below (The URL in .ie textarea is placeholder only. You will need to replace with path to your domain) */
+
+.ie .wrapper,
+.ie .name,
+.ie .email,
+.ie input,
+.ie textarea {
+    *behavior: url("http://www.givanov.net/js/boxsizing.htc");
+}
 
 	

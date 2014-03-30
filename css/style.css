@@ -638,7 +638,7 @@ Media queries (pc; screen wider than 720px)
 
     #nav nav {
         height: auto;
-        overflow: visible;
+        /* overflow: visible; Overflow: hidden hides the 1px overlap in Chrome. */
     }
 
     #nav ul {
@@ -732,6 +732,10 @@ Media queries (print)
     *zoom: 1; /* 3 */
 }
 
+/* ******************************************
+    IE 8 and below, legacy browser style fixes
+****************************************** */
+
 /* Figures/Images */
 
 .ie #portfolio figure {
@@ -774,6 +778,5 @@ Media queries (print)
 .ie .email,
 .ie input,
 .ie textarea {
-    *behavior: url("http://www.givanov.net/index.html");
+    *behavior: url("http://www.givanov.net/js/boxsizing.htc");
 }
-
